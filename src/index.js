@@ -6,11 +6,17 @@ console.log("Webpack is working!");
 
 // 
 async function displayLocation() {
-    const response = await getLocation("New York");
 
-    const data = await response.json();
+    try {
 
-    console.log("Weather Data:", data);
+        const data = await getLocation("New York");
+
+        console.log("Weather Data:", data);
+    
+    } catch (error) {
+        console.error("Error displaying location:", error);
+    
+    }
+
 }
-
 displayLocation();
