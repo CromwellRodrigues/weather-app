@@ -1,6 +1,6 @@
 import "./styles.css";
 import { getLocation } from "./api.js";
-console.log("Webpack is working!");
+import { getGif} from "./api.js";
 
 
 
@@ -20,3 +20,31 @@ async function displayLocation() {
 
 }
 displayLocation();
+
+
+async function displayGif() {
+    try {
+        const gif = await getGif("sunny");
+        console.log("GIF:", gif);
+        console.log("GIF url:", gif.images?.original?.url);
+
+        const img = document.getElementById("gif-display");
+
+        if(!img) return;
+
+        const gifUrl = gif.images?.original?.url;
+
+        if (!gifUrl) {
+            throw new Error("No GIF URL returned from Giphy");
+
+        }
+        img.src = gifUrl;
+        img.alt = gif.title || "Weather GIF";
+
+        } catch (error) {
+        console.error("Error displaying GIF:", error);
+
+    }
+}
+
+displayGif();
