@@ -5,20 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 </head>
-<body>
-    <main> 
-        <h1 class="text-3xl font-bold text-center mt-10">Weather Talk</h1>
+<body class="min-h-screen uiverse-bg ">
 
-        <img id="gif-display" 
-        class="max-w-[320px] w-full h-auto border-2 rounded-sm"
-        alt = "weather gif" />
 
-    </main>
+    <main id="main" 
+    class="w-full md:max-w-6xl mx-auto flex flex-col items-center gap-10 px-4 py-10 mb-4 
+    "
+    > 
 
-    <div id="content" >
+        <div id="header" class="w-full flex flex-col lg:flex-row  lg:justify-between lg:items-center  gap-5 bg-gradient-to-br from-slate-950/80 via-indigo-950 to-slate-950/80 p-4 rounded">
 
-    </div>
+            <h1 class="text-3xl font-semibold text-center text-white mt-8 mb-8 tracking-wide uppercase">Weather Talk</h1>
+
+            <div id="search-div"
+                    class=" flex flex-col sm:flex-row items-start sm:items-center justify-center   gap-3 lg:gap-0 mb-8"
+                    >
+                        <div id="search-input">
+                            <input type="text"
+                            id="city-input"
+                            placeholder="Search city"
+                            class="px-4 py-2 border-b border-blue-100 text-blue-100 bg-transparent  placeholder:text-blue-300 focus:outline-none focus:border-b-2 focus:border-blue-200 rounded-sm w-full max-w-[400px] mx-auto mt-4 text-lg capitalize" />
+
+                        </div>
+
+
+                        <!-- search button -->
+                        <div>
+                            <button id="search-btn"
+                            class="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-700 text-white px-4 py-2 rounded mt-4 hover:bg-gradient-to-br hover:from-blue-800 hover:via-blue-900 hover:to-blue-800 transition duration-300">
+                                Search
+                            </button>
+                        </div>
+
+            </div>
+
+        
+        </div>
+
     
+
+        <div id="content"
+        class="w-full " >
+           
+
+                
+
+                
+        </div>
+
+        <!-- <img id="gif-display" 
+            class="max-w-[320px] w-full h-auto mx-auto border-2 rounded-sm"
+            alt = "weather gif" /> -->
+
+        
+
+        
+    </main>
     
 </body>
 </html>
